@@ -1,7 +1,11 @@
+const argv = require("optimist")
+            .usage("Usage: $0 --port [listen port]")
+            .demand(["port"])
+            .argv;
 const socks5 = require("./lib");
-const server = socks5.createServer();
-
 const telegarm = require("./telegram");
+
+const server = socks5.createServer();
 telegarm.loadIPList("./telegramip.txt");
 
 server.on("proxyConnect", function (info, socket) {
@@ -36,4 +40,5 @@ function isIP(str) {
     return true;
 }
 
-server.listen(65535);
+server.listen(argv.port);
+console.log(`listen port at ${argv.port}.`);

@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "binary": "^0.3.0",
+        "optimist": "^0.6.1",
         "put": "0.0.6"
     }
 }
