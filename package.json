@@ -1,0 +1,13 @@
+{
+    "name": "telegram-socks5-proxy",
+    "version": "0.0.0",
+    "description": "",
+    "main": "lib",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "binary": "^0.3.0",
+        "put": "0.0.6"
+    }
+}
