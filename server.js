@@ -41,4 +41,4 @@ function isIP(str) {
 }
 
 server.listen(argv.port);
-console.log(`listen port at ${argv.port}.`);
+console.log(`Listening on port ${argv.port}.`);

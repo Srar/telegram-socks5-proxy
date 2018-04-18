@@ -6,7 +6,7 @@ module.exports = {
     loadIPList(path) {
         "use strict";
         if (!fs.existsSync(path)) {
-            throw new Error("telegarm IP段文件不存在.");
+            throw new Error("Not found ip range file of telegram.");
         }
         iplist = [];
         var iplistFileContent = fs.readFileSync(path).toString();
