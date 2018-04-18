@@ -4,6 +4,7 @@ var iplist = [];
 
 module.exports = {
     loadIPList(path) {
+        "use strict";
         if (!fs.existsSync(path)) {
             throw new Error("telegarm IP段文件不存在.");
         }
