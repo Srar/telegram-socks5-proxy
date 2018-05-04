@@ -8,16 +8,16 @@ const telegarm = require("./telegram");
 const server = socks5.createServer();
 telegarm.loadIPList("./telegramip.txt");
 
-server.on("proxyConnect", function (info, socket) {
+server.on("proxyConnect", function (info, targetSocket, clientSocket) {
     var ip = info.host;
-    var log = `${socket.remoteAddress} <-> ${ip}:${info.port}`;
+    var log = `${clientSocket.remoteAddress} <-> ${ip}:${info.port}`;
     if (!isIP(ip)) {
-        socket.destroy();
+        targetSocket.destroy();
         console.log(log, "reject");
         return;
     }
     if (!telegarm.isTelegramIP(ip)) {
-        socket.destroy();
+        targetSocket.destroy();
         console.log(log, "reject");
         return;
     }
