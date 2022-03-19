@@ -1,0 +1,7 @@
+version: "3"
+services:
+  proxy:
+    build: .
+    restart: always
+    ports:
+      - 1080:1080
